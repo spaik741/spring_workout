@@ -7,5 +7,6 @@ public class Test1 {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         Pet pet = context.getBean("idPet", Pet.class);
         pet.say();
+        context.close();
     }
 }
