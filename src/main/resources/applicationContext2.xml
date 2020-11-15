@@ -9,7 +9,10 @@
 
     <bean id="idPet"
         class="spring_introduction.Dog"
-        scope="prototype">
+        scope="singleton"
+    init-method="init"
+    destroy-method="destroy">
+
     </bean>
 
 
