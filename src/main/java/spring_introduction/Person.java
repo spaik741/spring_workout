@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
-    @Autowired
-    @Qualifier("dogBean")
+//    @Autowired
+//    @Qualifier("dogBean")
     private Pet pet;
     @Value("${person.name}")
     private String name;
