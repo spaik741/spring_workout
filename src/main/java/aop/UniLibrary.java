@@ -10,9 +10,10 @@ public class UniLibrary extends AbstractLibrary{
         System.out.println("_________________________");
     }
 
-    public void returnBook(){
+    public String returnBook(){
         System.out.println("Мы возвращаем книгу в UniLibrary ");
         System.out.println("_________________________");
+        return "Книжка для чтения (с) Кто то";
     }
 
     public void getMagazine(){

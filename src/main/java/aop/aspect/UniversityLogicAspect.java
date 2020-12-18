@@ -1,10 +1,8 @@
 package aop.aspect;
 
 import aop.Student;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -25,10 +23,17 @@ public class UniversityLogicAspect {
         firstStudent.setNameSurname("Misha.Br");
         System.out.println("afterReturningGetStudentsLoggingAdvice()");
     }
-    */
+
     @AfterThrowing("execution(* getStudents())")
     public void afterThrowingGetStudentsLoggingAdvice(){
         System.out.println("afterThrowingGetStudentsLoggingAdvice");
     }
-
+*/
+    @Around("execution(public String returnBook())")
+    public Object beforeReturnBookLoggingAdvice (ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        System.out.println("До beforeReturnBookLoggingAdvice");
+        Object targetMethodResult = proceedingJoinPoint.proceed();
+        System.out.println("После beforeReturnBookLoggingAdvice");
+        return targetMethodResult;
+    }
 }
