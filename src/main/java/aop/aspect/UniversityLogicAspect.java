@@ -2,6 +2,7 @@ package aop.aspect;
 
 import aop.Student;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import java.util.List;
 @Aspect
 public class UniversityLogicAspect {
 
+/*
     @Before("execution(* getStudents())")
     public void beforeGetStudentsLoggingAdvice(){
         System.out.println("beforeGetStudentsLoggingAdvice()");
@@ -23,4 +25,10 @@ public class UniversityLogicAspect {
         firstStudent.setNameSurname("Misha.Br");
         System.out.println("afterReturningGetStudentsLoggingAdvice()");
     }
+    */
+    @AfterThrowing("execution(* getStudents())")
+    public void afterThrowingGetStudentsLoggingAdvice(){
+        System.out.println("afterThrowingGetStudentsLoggingAdvice");
+    }
+
 }
